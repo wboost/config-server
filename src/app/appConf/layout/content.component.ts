@@ -7,12 +7,6 @@ import { Component } from '@angular/core';
   `,
   styles: [
     `
-      .layout-content {
-        left: 240px;
-        position: absolute;
-        top: 64px;
-        margin: 10px;
-      }
     `
   ]
 })

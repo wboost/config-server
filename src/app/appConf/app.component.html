@@ -1,15 +1,43 @@
 <nz-layout>
-  <layout-top></layout-top>
+  <layout-top class="layout-top"></layout-top>
   <layout-menu class="layout-menu"></layout-menu>
-  <layout-content></layout-content>
-  <layout-footer></layout-footer>
+  <layout-content class="layout-content"></layout-content>
+  <layout-footer class="layout-footer"></layout-footer>
 </nz-layout>
 
 <style>
+  .layout-top {
+    height: 60px;
+    position: fixed;
+    overflow: auto;
+    top: 0px;
+    width: 100%;
+  }
+
   .layout-menu {
-    position: absolute;
-    top: 64px;
-    bottom: 41px;
+    position: fixed;
+    top: 55px;
+    bottom: 31px;
+    width: 240px;
+    overflow: auto;
+
+  }
+
+  .layout-content {
+    left: 240px;
+    position: fixed;
+    top: 60px;
+    margin: 10px;
+    overflow: auto;
+    bottom: 31px;
+    display: flex;
+    display: -webkit-flex;
+    right: 0px;
+  }
+
+  .layout-footer {
+    position: fixed;
+    bottom: 0px;
     width: 100%;
   }
 </style>
