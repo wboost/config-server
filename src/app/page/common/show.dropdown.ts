@@ -10,10 +10,15 @@ import {ApplicationDto, Client} from "../../appConf/dto/dto.client";
       <a nz-dropdown>
         please choose one client. <i nz-icon type="down"></i>
       </a>
-      <ul nz-menu>
+      <ul nz-menu class="height:60px;position: fixed;overflow: auto;">
         <div *ngFor="let client of clients;index as i">
-          <li nz-menu-item nzDisabled *ngFor="let app of client.apps;index as j">
-            <a (click)="choose(client,app)">{{client.name + '(' + app.basePath + ')'}}</a>
+          <li nz-submenu>
+            <span title>{{client.name}}</span>
+            <ul>
+              <li nz-menu-item nzDisabled *ngFor="let app of client.apps;index as j">
+                <a (click)="choose(client,app)">{{client.name + '(' + app.basePath + ')'}}</a>
+              </li>
+            </ul>
           </li>
           <li *ngIf="i !== clients.length-1" nz-menu-divider></li>
         </div>

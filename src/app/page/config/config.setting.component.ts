@@ -38,8 +38,9 @@ export class ConfigSettingComponent implements OnInit{
 
   show(choose) {
     let client = choose[0];
-    let app = choose[1];
-    this.propertiesService.fetchByApp(client.name).subscribe(result => {
+    let app = <ApplicationDto>choose[1];
+    console.log(app)
+    this.propertiesService.fetchByApp(app).subscribe(result => {
       let client = <Client>result.data;
       client.apps.forEach(appFind=> {
         if (appFind.id === app.id)

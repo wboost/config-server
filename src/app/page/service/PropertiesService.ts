@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Result} from "../../appConf/dto/dto.Result";
 import {Env} from "../../appConf/dto/dto.env";
-import {Properties} from "../../appConf/dto/dto.client";
+import {ApplicationDto, Properties} from "../../appConf/dto/dto.client";
 import {UploadFile} from "ng-zorro-antd";
 
 @Injectable({
@@ -21,8 +21,8 @@ export class PropertiesService {
     return this.http.get<Env>(`/${application}/${profile}`)
   }
 
-  fetchByApp(application:string) {
-    return this.http.get<Result>(`/client/properties/${application}`)
+  fetchByApp(application: ApplicationDto) {
+    return this.http.get<Result>(`/client/properties/${application.applicationName}/${application.id}`)
   }
 
   updateApp(application:string, profile:string, properties:Properties[]) {
